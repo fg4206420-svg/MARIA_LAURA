@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para Maria Laura ❤️</title>
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#120a1a;
+      --glow:#ff3b7a;
+      --glow2:#ff7bb0;
+      --text:#f7f7ff;
+      --muted: rgba(247,247,255,.82);
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      height:100vh;
+      display:grid;
+      place-items:center;
+      background: radial-gradient(1200px 800px at 70% 30%, #2a1640 0%, transparent 55%),
+                  radial-gradient(900px 700px at 20% 70%, #162a5a 0%, transparent 50%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+      overflow:hidden;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+    }
+
+    /* estrellitas */
+    .star{
+      position:absolute;
+      width:2px;height:2px;
+      background:rgba(255,255,255,.65);
+      border-radius:50%;
+      animation: twinkle 3.8s infinite ease-in-out;
+      filter: drop-shadow(0 0 6px rgba(255,255,255,.6));
+    }
+    @keyframes twinkle{
+      0%,100%{opacity:.25; transform:scale(1)}
+      50%{opacity:1; transform:scale(1.7)}
+    }
+
+    .card{
+      position:relative;
+      width:min(920px, 94vw);
+      padding:26px 22px 22px;
+      border-radius:24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+
+    .top{
+      text-align:center;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(22px, 3.2vw, 34px);
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap: 18px;
+      align-items:center;
+    }
+    @media (max-width: 780px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* poema (lado izquierdo) */
+    .poem{
+      padding:18px 18px;
+      border-radius:18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      min-height: 220px;
+    }
+    .poem-title{
+      margin:0 0 10px 0;
+      font-size: 15px;
+      color: rgba(255,255,255,.92);
+      letter-spacing:.2px;
+    }
+    .typebox{
+      font-size: 16px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.92);
+      white-space: pre-wrap;
+    }
+    .caret{
+      display:inline-block;
+      width:10px;
+      margin-left:2px;
+      border-left: 2px solid rgba(255,255,255,.75);
+      transform: translateY(2px);
+      animation: blink .85s infinite;
+    }
+    @keyframes blink{ 0%,49%{opacity:1} 50%,100%{opacity:0} }
+
+    .note{
+      margin-top:12px;
+      font-size: 13px;
+      color: rgba(255,255,255,.70);
+    }
+
+    /* corazón (lado derecho) */
+    .heart-wrap{
+      height:320px;
+      display:grid;
+      place-items:center;
+      border-radius:20px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .heart{
+      width:140px;
+      height:140px;
+      position:relative;
+      transform: rotate(45deg);
+      animation: beat 1.05s infinite ease-in-out;
+      filter: drop-shadow(0 0 26px rgba(255,59,122,.45));
+      z-index:2;
+    }
+    .heart::before,
+    .heart::after{
+      content:"";
+      position:absolute;
+      width:140px;
+      height:140px;
+      background: radial-gradient(circle at 30% 30%, var(--glow2), var(--glow));
+      border-radius:50%;
+    }
+    .heart::before{ left:-70px; top:0; }
+    .heart::after{ left:0; top:-70px; }
+    .heart .square{
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 30% 30%, var(--glow2), var(--glow));
+      border-radius:18px;
+      box-shadow: 0 0 40px rgba(255,59,122,.25);
+    }
+    @keyframes beat{
+      0%,100%{ transform: rotate(45deg) scale(1); }
+      20%{ transform: rotate(45deg) scale(1.08); }
+      40%{ transform: rotate(45deg) scale(0.98); }
+      60%{ transform: rotate(45deg) scale(1.12); }
+      80%{ transform: rotate(45deg) scale(1.02); }
+    }
+
+    /* partículas */
+    .particle{
+      position:absolute;
+      left:50%;
+      top:52%;
+      width:10px;height:10px;
+      border-radius:50%;
+      background: rgba(255, 123, 176, .9);
+      transform: translate(-50%,-50%);
+      animation: floatUp 2.3s linear infinite;
+      filter: blur(.2px) drop-shadow(0 0 10px rgba(255,123,176,.55));
+      opacity:.0;
+      z-index:1;
+    }
+    @keyframes floatUp{
+      0%{opacity:0; transform: translate(-50%,-50%) scale(.6);}
+      10%{opacity:.9;}
+      100%{
+        opacity:0;
+        transform: translate(calc(-50% + var(--dx)), calc(-50% - 250px)) scale(1.1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="top">
+      <h1>Para Maria Laura ❤️</h1>
+      <p class="sub">Un detalle sencillo, pa’ sacarte una sonrisa.</p>
+    </div>
+
+    <div class="grid">
+      <div class="poem">
+        <p class="poem-title">Poema</p>
+        <div class="typebox" id="typebox"></div><span class="caret" aria-hidden="true"></span>
+        <div class="note">💡 Si lo abres en el celular, igual se acomoda.</div>
+      </div>
+
+      <div class="heart-wrap" id="arena" aria-label="Corazón animado">
+        <div class="heart">
+          <div class="square"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Estrellitas
+    const N = 60;
+    for(let i=0;i<N;i++){
+      const s = document.createElement('div');
+      s.className='star';
+      s.style.left = Math.random()*100+'vw';
+      s.style.top = Math.random()*100+'vh';
+      s.style.animationDelay = (Math.random()*3.8)+'s';
+      s.style.opacity = (0.2 + Math.random()*0.8);
+      document.body.appendChild(s);
+    }
+
+    // Partículas alrededor del corazón
+    const arena = document.getElementById('arena');
+    function spawnParticle(){
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const dx = (Math.random()*240 - 120).toFixed(0) + 'px';
+      p.style.setProperty('--dx', dx);
+      p.style.animationDuration = (1.8 + Math.random()*1.6).toFixed(2) + 's';
+      p.style.width = p.style.height = (6 + Math.random()*10).toFixed(0) + 'px';
+      arena.appendChild(p);
+      setTimeout(()=>p.remove(), 3300);
+    }
+    setInterval(spawnParticle, 140);
+
+    // Poema "recitado" (typewriter)
+    const poem = [
+      "A veces no hace falta decir mucho,",
+      "basta con saber que alguien piensa en ti.",
+      "Que entre tantas personas y días normales,",
+      "Maria Laura aparece con calma",
+      "y una sonrisa sin razón.",
+      "",
+      "Y pase lo que pase,",
+      "siempre voy a estar ahí para ti,",
+      "para lo que sea."
+    ].join("\n");
+
+    const box = document.getElementById('typebox');
+    let i = 0;
+    const speed = 26; // ms por carácter
+
+    function typeNext(){
+      if(i <= poem.length){
+        box.textContent = poem.slice(0, i);
+        i++;
+        setTimeout(typeNext, speed);
+      }
+    }
+
+    // Empieza al cargar
+    typeNext();
+  </script>
+</body>
+</html>
