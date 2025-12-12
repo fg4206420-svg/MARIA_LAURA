@@ -200,7 +200,6 @@
       <div class="poem">
         <p class="poem-title">Poema</p>
         <div class="typebox" id="typebox"></div><span class="caret" aria-hidden="true"></span>
-        <div class="note">💡 Si lo abres en el celular, igual se acomoda.</div>
       </div>
 
       <div class="heart-wrap" id="arena" aria-label="Corazón animado">
@@ -239,17 +238,21 @@
     setInterval(spawnParticle, 140);
 
     // Poema "recitado" (typewriter)
-    const poem = [
-      "A veces no hace falta decir mucho,",
-      "basta con saber que alguien piensa en ti.",
-      "Que entre tantas personas y días normales,",
-      "Maria Laura aparece con calma",
-      "y una sonrisa sin razón.",
-      "",
-      "Y pase lo que pase,",
-      "siempre voy a estar ahí para ti,",
-      "para lo que sea."
-    ].join("\n");
+const poem = [
+  "No siempre sé cómo decir las cosas,",
+  "pero contigo me nace intentarlo.",
+  "Entre tanta gente y días normales,",
+  "apareces tú,",
+  "y traes tranquilidad a mis días y a mis noches.",
+  "Sé que no soy perfecto,",
+  "pero puedo apoyarte en todo.",
+  "",
+  "Y pase lo que pase,",
+  "sin importar el momento o la situación,",
+  "yo siempre voy a estar ahí para ti.",
+  "Para lo que sea."
+].join("\n");
+
 
     const box = document.getElementById('typebox');
     let i = 0;
